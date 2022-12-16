@@ -86,74 +86,75 @@ def ajout_foret_map(map,nb_villages,largeur):
     if map[i] in liste_des_nom_village:
       pass
     elif i == 0: #si c'est la case tout en haut a gauche
-      if map[i+1] not in liste_des_nom_village: #si la case a droite est vide
+      if map[i+1] not in liste_des_nom_village: #si la case à droite est vide
         if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
-          if map[i+largeur+1] not in liste_des_nom_village: #si la case en desous a droite est vide
+          if map[i+largeur+1] not in liste_des_nom_village: #si la case en dessous à droite est vide
             map[i] = "f"
 
-    elif i == largeur-1: #si c'est la case en haut a droite
-      if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
+    elif i == largeur-1: #si la case en haut à droite est vide
+      if map[i-1] not in liste_des_nom_village: #si la case à gauche est vide
         if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas a gauche est vide
-          if map[i+largeur] not in liste_des_nom_village: #si la case en desous est vide
+          if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
             map[i] = "f"
 
     elif i == largeur*largeur-largeur : #si c'est la case en bas a gauche
-      if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-        if map[i-largeur-1] not in liste_des_nom_village: #si la case est en haut a droite
-          if map[i+1] not in liste_des_nom_village: #si la case a droite est vide
+      if map[i-largeur] not in liste_des_nom_village: #si la case en haut est vide
+        if map[i-largeur-1] not in liste_des_nom_village: #si la case en haut à droite est vide
+          if map[i+1] not in liste_des_nom_village: #si la case à droite est vide
             map[i] = "f"
   
     
-    elif i == largeur*largeur-1: #si c'est la cas you en bas a droite
-      if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-        if map[i-largeur-1] not in liste_des_nom_village: #si la case est en haut a gauche
-          if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
+    elif i == largeur*largeur-1: #si c'est la case tout en bas à droite
+      if map[i-largeur] not in liste_des_nom_village: #si la case en haut est vide
+        if map[i-largeur-1] not in liste_des_nom_village: #si la case en haut à gauche est vide
+          if map[i-1] not in liste_des_nom_village: #si la case à gauche est vide
             map[i] = "f"
 
     elif i%largeur == 0 : #si la case est sur la colonne a gauche
-      if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-        if map[i-largeur+1] not in liste_des_nom_village: #si la case est en haut a droite
-          if map[i+1] not in liste_des_nom_village: #si la case a droite est vide
-            if map[i+largeur+1] not in liste_des_nom_village: #si la case en desous a droite est vide
+      if map[i-largeur] not in liste_des_nom_village: #si la case en haut est vide
+        if map[i-largeur+1] not in liste_des_nom_village: #si la case en haut à droite est vide
+          if map[i+1] not in liste_des_nom_village: #si la case à droite est vide
+            if map[i+largeur+1] not in liste_des_nom_village: #si la case en dessous à droite est vide
               if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
                 map[i] = "f"
 
-    elif i in dernien_chiffre_de_la_ligne(largeur): #si la case est tout a droite
-      if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-        if map[i-largeur-1] not in liste_des_nom_village: #si la case est en haut a gauche
-          if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
-            if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas a gauche est vide
+    elif i in dernien_chiffre_de_la_ligne(largeur): #si la case est tout à droite
+      if map[i-largeur] not in liste_des_nom_village: #si la case en haut est vide
+        if map[i-largeur-1] not in liste_des_nom_village: #si la case en haut à gauche est vide
+          if map[i-1] not in liste_des_nom_village: #si la case à gauche est vide
+            if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas à gauche est vide
               if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
                 map[i] = "f"
 
     elif i>0 and i<largeur : #si la case est juste sur la premiere ligne
-      if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
-        if map[i+1] not in liste_des_nom_village: #si la case a droite est vide
-          if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas a gauche est vide
+      if map[i-1] not in liste_des_nom_village: #si la case à gauche est vide
+        if map[i+1] not in liste_des_nom_village: #si la case à droite est vide
+          if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas à gauche est vide
             if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
-              if map[i+largeur+1] not in liste_des_nom_village: #si la case en desous a droite est vide
+              if map[i+largeur+1] not in liste_des_nom_village: #si la case en dessous à droite est vide
                 map[i] = "f"
 
-    elif i >= largeur*largeur-largeur-1 and i <=largeur*largeur-2: #si la case est sur la derniere ligne
-      if map[i-largeur+1] not in liste_des_nom_village: #si la case est en haut a gauche
-        if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-          if map[i-largeur-1] not in liste_des_nom_village: #si la case est en haut a droite
-            if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
-              if map[i+1] not in liste_des_nom_village: #si la case a droite est vide
+    elif i >= largeur*largeur-largeur-1 and i <=largeur*largeur-2: #si la case est sur la dernière ligne
+      if map[i-largeur+1] not in liste_des_nom_village: #si la case en haut à gauche est vide
+        if map[i-largeur] not in liste_des_nom_village: #si la case en haut est vide
+          if map[i-largeur-1] not in liste_des_nom_village: #si la case en haut à droite est vide
+            if map[i-1] not in liste_des_nom_village: #si la case à gauche est vide
+              if map[i+1] not in liste_des_nom_village: #si la case à droite est vide
                 map[i] = "f"
 
-    elif i > largeur-1 and i < largeur*largeur-largeur: #si la case est au cntre
-      if map[i-largeur+1] not in liste_des_nom_village: #si la case est en haut a gauche
-        if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-          if map[i-largeur-1] not in liste_des_nom_village: #si la case est en haut a droite
-            if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
-              if map[i+1] not in liste_des_nom_village: #si la case a droite est vide
-                if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas a gauche est vide
+    elif i > largeur-1 and i < largeur*largeur-largeur: #si la case est au centre
+      if map[i-largeur+1] not in liste_des_nom_village: #si la case en haut à gauche est vide
+        if map[i-largeur] not in liste_des_nom_village: #si la case en haut est vide
+          if map[i-largeur-1] not in liste_des_nom_village: #si la case en haut à droite est vide
+            if map[i-1] not in liste_des_nom_village: #si la case à gauche est vide
+              if map[i+1] not in liste_des_nom_village: #si la case à droite est vide
+                if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas à gauche est vide
                   if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
-                    if map[i+largeur+1] not in liste_des_nom_village: #si la case en desous a droite est vide
+                    if map[i+largeur+1] not in liste_des_nom_village: #si la case en dessous à droite est vide
                       map[i] = "f"
     i = i + 1
   return map
+
 
 def creation_map(largeur,nb_villages):
   map = 0
@@ -185,8 +186,9 @@ def affichage_map(map,largeur,nb_villages):
 
 joueur_stats = mage()
 
-nb_villages = 10 # afin d'avoir un affichage minimum correct il est recommandé d'avoir au maximum un nombre de vilage a la moité de la largeur (ex : 15 villages pour 30 de largeur)
-largeur = 20
+nb_villages = 5 # afin d'avoir un affichage minimum correct il est recommandé d'avoir au maximum un nombre de vilage a la moité de la largeur (ex : 15 villages pour 30 de largeur)
+largeur = 10
+
 liste_nb_village = []
 
 
