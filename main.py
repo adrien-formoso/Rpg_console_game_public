@@ -194,3 +194,6 @@ liste_nb_village = []
 
 map = creation_map(largeur,nb_villages)
 affichage_map(map,largeur,nb_villages)
+
+# NON TERMINE
+# tâche en cours : création d'une carte avec des points d'interets
