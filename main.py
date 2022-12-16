@@ -1,4 +1,6 @@
 import random
+from colorama import init, Fore
+
 
 class mage:
   def __init__(self):
@@ -72,8 +74,8 @@ def generateur_villages(largeur,nb_villages):
 def dernien_chiffre_de_la_ligne(largeur):
   liste = []
   i = 1
-  while i <largeur:
-    liste.append(largeur*i)
+  while i < largeur:
+    liste.append(largeur*i-1)
     i = i + 1
   return liste
 
@@ -118,9 +120,8 @@ def ajout_foret_map(map,nb_villages,largeur):
 
     elif i in dernien_chiffre_de_la_ligne(largeur): #si la case est tout a droite
       if map[i-largeur] not in liste_des_nom_village: #si la case est en haut
-        if map[i-largeur+1] not in liste_des_nom_village: #si la case est en haut a gauche
+        if map[i-largeur-1] not in liste_des_nom_village: #si la case est en haut a gauche
           if map[i-1] not in liste_des_nom_village: #si la case est gauche est vide
-            print(i)
             if map[i+largeur-1] not in liste_des_nom_village: #si la case en bas a gauche est vide
               if map[i+largeur] not in liste_des_nom_village: #si la case en dessous est vide
                 map[i] = "f"
@@ -162,24 +163,30 @@ def creation_map(largeur,nb_villages):
 
 def affichage_map(map,largeur,nb_villages):
   i = 0
-  espacement = len(str(nb_villages))+1
+  couleurs = [
+    Fore.RED,
+    Fore.GREEN,
+    Fore.YELLOW,
+    Fore.BLUE,
+    Fore.MAGENTA,
+    Fore.CYAN]
   while i < largeur*largeur:
+    couleur = random.choice(couleurs)
     if i%largeur == 0:
       print()
     if isinstance(map[i], int):
       if map[i] < 10:
-        print(map[i],end = " ")
+        print(couleur +str(map[i]),end = " ")
       else:
-        print(map[i],end = "")
+        print(couleur +str(map[i]),end = "")
     elif  map[i] == "-" or map[i] == "f":
-      print(map[i],end = " ")
-
+      print(Fore.RESET + str(map[i]),end = " ")
     i += 1
 
 joueur_stats = mage()
 
-nb_villages = 3 # afin d'avoir un affichage minimum correct il est recommandé d'avoir au maximum un nombre de vilage a la moité de la largeur (ex : 15 villages pour 30 de largeur)
-largeur = 15
+nb_villages = 10 # afin d'avoir un affichage minimum correct il est recommandé d'avoir au maximum un nombre de vilage a la moité de la largeur (ex : 15 villages pour 30 de largeur)
+largeur = 20
 liste_nb_village = []
 
 
