@@ -1,8 +1,8 @@
 import random
 from dictionaries import monsters
 
-class Monster():
-    def __init__(self, *args):
+class Monster():            
+    def __init__(self, *args):       #permet soit d'envoyer un monstre aléatoire si on ne spécifie rien, sinon, permet d'envoyer un monstre spécifié (ex: pour le dungeon_scnenar() )
         if len(args) == 0:
             self.type = random.choice(list(monsters)) # CHOISI UN MONSTRE ALEATOIRE DE LA LISTE 
             self.health = monsters[self.type]["health"] # SELECTIONNE LES PV DU MONSTRE ALEATOIRE

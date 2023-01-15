@@ -1,10 +1,7 @@
 import random
-import sys
-import time
-import os
 from colorama import init, Fore
 
-######################################################################################################
+###################################################
 ################################################### MAP
 
 def creation_liste_position_dispo(largeur):
@@ -398,15 +395,12 @@ def decouverte_map(map,largeur):
 
 def menu_deplacement(): # FONCTION QUAND ON DEMANDE OU ALLER
   print(Fore.RESET)
-  print('#########################################')
-  print('##############  DEPLACEMENT  ############')
-  print('#########################################')
-  print('         -     haut = 8             -    ')
-  print('         - Gauche = 4   6 = Droite  -    ')
-  print('         -      bas = 2             -    ')
-  print('         -                          -    ')
-
-
-
+  print("+" + "-"*45 + "+")
+  print("|" + " "*17 + "DEPLACEMENT" + " "*17 + "|")
+  print("|" + " "*45 + "|")
+  print("|" + " "*18 + " ↑ = 8" + " "*21 + "|")
+  print("|" + " "*10 + " ← = 4          → = 6 " + " "*13 + "|")
+  print("|" + " "*18 + " ↓ = 2" + " "*21 + "|")
+  print("+" + "-"*45 + "+")
 
 

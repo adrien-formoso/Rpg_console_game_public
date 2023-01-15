@@ -5,7 +5,7 @@ class Mage(Player):
     
     def __init__(self):
         super().__init__()
-        self.current_weapon = start_weapon["baton magique"]["attack"]
+        self.current_weapon = start_weapon["baton magique"]["attack"]     #permet de stocker l'attaque de l'arme actuelle
         self.health = 550
         self.max_health = 550
         self.mana = 100
@@ -14,7 +14,7 @@ class Mage(Player):
         self.max_attack = 30 + self.current_weapon
         self.intelligence = 20
         self.speed = 12
-        self.inventory = [start_weapon["baton magique"]["name"]]
+        self.inventory = [start_weapon["baton magique"]["name"]]   #permet de stocker l'arme dans l'inventaire du joueur
         self.luck = 60
         
 
